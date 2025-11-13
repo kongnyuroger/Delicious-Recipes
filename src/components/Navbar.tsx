@@ -1,14 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
+  const activeStyle = "text-amber-600 font-semibold";
+  const normalStyle = "hover:text-amber-600 transition";
+
   return (
-    <nav className="flex justify-between items-center bg-orange-500 text-white px-6 py-4 shadow-md">
-      <Link to="/" className="text-2xl font-bold">🍽️ Delicious Recipes</Link>
-      <div className="space-x-6">
-        <Link to="/" className="hover:text-yellow-100">Home</Link>
-        <Link to="/favorites" className="hover:text-yellow-100">Favorites</Link>
-        <Link to="/contact" className="hover:text-yellow-100">Contact</Link>
-        <Link to="/about" className="hover:text-yellow-100">About</Link>
+    <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+        <Link to="/" className="text-2xl font-extrabold text-[#3E2C20]">
+          🍳 Delicious Recipes
+        </Link>
+
+        <div className="flex gap-6 text-gray-700">
+          <NavLink to="/" end className={({ isActive }) => (isActive ? activeStyle : normalStyle)}>
+            Home
+          </NavLink>
+          <NavLink to="/favorites" className={({ isActive }) => (isActive ? activeStyle : normalStyle)}>
+            Favorites
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => (isActive ? activeStyle : normalStyle)}>
+            About
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? activeStyle : normalStyle)}>
+            Contact
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

@@ -3,23 +3,22 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import RecipeDetails from "./pages/RecipeDetails";
 import Favorites from "./pages/Favorites";
-import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <Navbar />
-      <div className="p-6">
+      <div className="bg-[#FFF8EE] min-h-screen">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>
   );
 }
-export default App;
