@@ -1,5 +1,5 @@
 # Delicious Recipes
 
 ## how to install 
-git clone 
+git clone reponame
 npm install
