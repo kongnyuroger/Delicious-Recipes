@@ -7,3 +7,4 @@ npm install
 
 
 this 2026, i will update this app to include african recipes
+gather africa recipes
